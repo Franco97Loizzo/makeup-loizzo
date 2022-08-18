@@ -1,0 +1,30 @@
+.navStyle{
+    background-color: rgba(29, 153, 105, 0.603);
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+.logoLinda{
+
+}
+
+.ulNav{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    list-style: none;
+    margin: auto;
+}
+
+.liNav{
+    padding: 10px;
+}
+
+.botonNav{
+    
+    border-radius: 100px;
+    cursor: pointer;
+}
