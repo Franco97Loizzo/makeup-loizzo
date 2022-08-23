@@ -1,5 +1,6 @@
 import "./NavBar.css"
 import logo1 from ".//logo1.png"
+import CartWidget from "../CartWidget/CartWidget";
 
 function NavBar(){
     return(
@@ -11,7 +12,11 @@ function NavBar(){
                 <li className="liNav">Pinta labios</li>
                 <li className="liNav">Rimels</li>
             </ul>
-            <button id="login" className="botonNav">Login</button>
+            <div className="botonesNav">
+                <button id="login" className="botonNav">Login</button>
+                <CartWidget/>
+            </div>
+            
         </nav>
     )
 }

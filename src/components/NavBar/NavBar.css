@@ -28,3 +28,11 @@
     border-radius: 100px;
     cursor: pointer;
 }
+
+.botonesNav{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    list-style: none;
+    margin: 0;
+}
