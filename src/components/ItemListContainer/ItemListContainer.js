@@ -1,4 +1,4 @@
-
+import ItemCount from "../ItemCount/ItemCount";
 
 
 function ItemListContainer(props){
@@ -7,6 +7,7 @@ function ItemListContainer(props){
         <>
         <h1>{titulo}</h1>
         <p>{texto}</p>
+        
         </>
         
     )
