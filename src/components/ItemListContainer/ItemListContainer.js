@@ -1,13 +1,11 @@
 import ItemCount from "../ItemCount/ItemCount";
+import ItemList from "../ItemList/ItemList";
 
 
-function ItemListContainer(props){
-    const {titulo,texto} = props
+function ItemListContainer(){
     return(
         <>
-        <h1>{titulo}</h1>
-        <p>{texto}</p>
-        
+        <ItemList/>
         </>
         
     )

@@ -1,0 +1,55 @@
+.countContainer{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    font-family:Georgia, 'Times New Roman', Times, serif ;
+}
+
+.counterContainer{
+    max-width: 500px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    margin: 10px;
+}
+
+.botonCounter{
+    font-family:Georgia, 'Times New Roman', Times, serif ;
+    font-size: 15px;
+    color: white;
+    background: none;
+    background-color: #1d9969;
+    border-radius: 10px;
+    border-color: #000000;
+    margin: auto;
+}
+
+.botonCounter:hover{
+    cursor: pointer;
+    background-color: #20E69A;
+}
+
+.botonAgregar{
+    font-family:Georgia, 'Times New Roman', Times, serif ;
+    font-size: 20px;
+    color: white;
+    background: none;
+    background-color: #1d9969;
+    display: inline;
+    justify-content: center;
+    margin: 1%;
+    padding: 1%;
+    border-radius: 5px;
+}
+.botonAgregar:hover{
+    cursor: pointer;
+    background-color: #20E69A;
+}
+
+.countText{
+    margin: 3px;
+}
