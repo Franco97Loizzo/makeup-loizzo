@@ -27,7 +27,7 @@ const productos = [
         id: 1,
         name: 'Sombra para ojos tono Azul',
         img: [eyeshadow1],
-        description:'',
+        description:'Esta es una descripcion un poco default para poder realizar el desafio',
         price: 200,
         
     },
@@ -36,7 +36,7 @@ const productos = [
         id: 2,
         name: 'Sombra para ojos multitono',
         img: [eyeshadow2],
-        description:'',
+        description:'Esta es una descripcion un poco default para poder realizar el desafio',
         price: 250,
         
     },
@@ -45,7 +45,7 @@ const productos = [
         id: 3,
         name: 'Sombra para ojos tono otoño',
         img: [eyeshadow3],
-        description:'',
+        description:'Esta es una descripcion un poco default para poder realizar el desafio',
         price: 200,
         
     },
@@ -54,7 +54,7 @@ const productos = [
         id: 4,
         name: 'Sombra para ojos tono invierno frio',
         img: [eyeshadow4],
-        description:'',
+        description:'Esta es una descripcion un poco default para poder realizar el desafio',
         price: 200,
         
     },
@@ -63,7 +63,7 @@ const productos = [
         id: 5,
         name: 'Sombra para ojos tonos rojos',
         img: [eyeshadow5],
-        description:'',
+        description:'Esta es una descripcion un poco default para poder realizar el desafio',
         price: 250,
         
     },
@@ -72,7 +72,7 @@ const productos = [
         id: 6,
         name: 'Labial rosa chicle',
         img: [lips1],
-        description:'',
+        description:'Esta es una descripcion un poco default para poder realizar el desafio',
         price: 150,
         
     },
@@ -81,7 +81,7 @@ const productos = [
         id: 7,
         name: 'Labial rosa pasion',
         img: [lips2],
-        description:'',
+        description:'Esta es una descripcion un poco default para poder realizar el desafio',
         price: 150,
         
     },
@@ -90,7 +90,7 @@ const productos = [
         id: 8,
         name: 'Labial fucsia interesante',
         img: [lips3],
-        description:'',
+        description:'Esta es una descripcion un poco default para poder realizar el desafio',
         price: 150,
         
     },
@@ -99,7 +99,7 @@ const productos = [
         id: 9,
         name: 'Labial rojo fuego',
         img: [lips4],
-        description:'',
+        description:'Esta es una descripcion un poco default para poder realizar el desafio',
         price: 150,
         
     },
@@ -117,7 +117,7 @@ const productos = [
         id: 11,
         name: 'Rimel tono Violeta',
         img: [rimel2],
-        description:'',
+        description:'Esta es una descripcion un poco default para poder realizar el desafio',
         price: 400,
         
     },
@@ -126,7 +126,7 @@ const productos = [
         id: 12,
         name: 'Pinta Uñas tono Rojo oscuro',
         img: [unas1],
-        description:'',
+        description:'Esta es una descripcion un poco default para poder realizar el desafio',
         price: 150,
         
     },
@@ -135,7 +135,7 @@ const productos = [
         id: 13,
         name: 'Pinta Uñas multicolor frios oscuros',
         img: [unas2],
-        description:'',
+        description:'Esta es una descripcion un poco default para poder realizar el desafio',
         price: 150,
         
     },
@@ -144,7 +144,7 @@ const productos = [
         id: 14,
         name: 'Pinta Uñas rosa con detalles',
         img: [unas3],
-        description:'',
+        description:'Esta es una descripcion un poco default para poder realizar el desafio',
         price: 150,
         
     },
@@ -153,7 +153,7 @@ const productos = [
         id: 15,
         name: 'Pinta Uñas pony azul metalizado',
         img: [unas4],
-        description:'',
+        description:'Esta es una descripcion un poco default para poder realizar el desafio',
         price: 200,
         
     },
@@ -162,7 +162,7 @@ const productos = [
         id: 16,
         name: 'Pinta Uñas gato cosmico azul metalizado',
         img: [unas5],
-        description:'',
+        description:'Esta es una descripcion un poco default para poder realizar el desafio',
         price: 250,
         
     },
@@ -171,7 +171,7 @@ const productos = [
         id: 17,
         name: 'Pinta Uñas gato cosmico violeta metalizado',
         img: [unas6],
-        description:'',
+        description:'Esta es una descripcion un poco default para poder realizar el desafio',
         price: 250,
         
     },
@@ -180,7 +180,7 @@ const productos = [
         id: 18,
         name: 'Pinta Uñas francia naranja',
         img: [unas7],
-        description:'',
+        description:'Esta es una descripcion un poco default para poder realizar el desafio',
         price: 150,
         
     },
@@ -189,7 +189,7 @@ const productos = [
         id: 19,
         name: 'Pinta Uñas rosa ovni',
         img: [unas8],
-        description:'',
+        description:'Esta es una descripcion un poco default para poder realizar el desafio',
         price: 200,
         
     },
@@ -198,7 +198,7 @@ const productos = [
         id: 20,
         name: 'Pinta Uñas Supergold',
         img: [unas9],
-        description:'',
+        description:'Esta es una descripcion un poco default para poder realizar el desafio',
         price: 400,
         
     },

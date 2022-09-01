@@ -1,0 +1,20 @@
+.detailContainer{
+
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+}
+
+
+.titulodetalles, .detalles, .preciodetalles, .descriptiondetalles
+,h3{
+    margin: auto;
+    padding: 1%;
+}
+
+.detallesImg{
+    margin: auto;
+    padding: 1%;
+}
+
