@@ -6,7 +6,10 @@ import {Link} from 'react-router-dom'
 function NavBar(){
     return(
         <nav className="navStyle">
+            <Link to={"/"}>
             <img className="logoLinda" width={"200px"} height="70px" src={logo1} alt=""/>
+            </Link>
+
             <ul className="ulNav">
                 <Link to="/" className="liNav">Inicio</Link>
                 <Link to="/productos/sombra" className="liNav">Sombras</Link>
