@@ -22,6 +22,7 @@ import unas7 from "../assets/unas7.jpeg"
 import unas8 from "../assets/unas8.jpeg"
 import unas9 from "../assets/unas9.jpeg"
 
+
 const productos = [
     {
         id: 1,
@@ -29,7 +30,7 @@ const productos = [
         img: [eyeshadow1],
         description:'Esta es una descripcion un poco default para poder realizar el desafio',
         price: 200,
-        
+        categoria:"sombra",
     },
 
     {
@@ -38,7 +39,7 @@ const productos = [
         img: [eyeshadow2],
         description:'Esta es una descripcion un poco default para poder realizar el desafio',
         price: 250,
-        
+        categoria: "sombra",
     },
 
     {
@@ -47,7 +48,7 @@ const productos = [
         img: [eyeshadow3],
         description:'Esta es una descripcion un poco default para poder realizar el desafio',
         price: 200,
-        
+        categoria:"sombra",
     },
 
     {
@@ -56,7 +57,7 @@ const productos = [
         img: [eyeshadow4],
         description:'Esta es una descripcion un poco default para poder realizar el desafio',
         price: 200,
-        
+        categoria: "sombra",
     },
 
     {
@@ -65,7 +66,7 @@ const productos = [
         img: [eyeshadow5],
         description:'Esta es una descripcion un poco default para poder realizar el desafio',
         price: 250,
-        
+        categoria: "sombra",
     },
 
     {
@@ -74,7 +75,7 @@ const productos = [
         img: [lips1],
         description:'Esta es una descripcion un poco default para poder realizar el desafio',
         price: 150,
-        
+        categoria: "labio",
     },
 
     {
@@ -83,7 +84,7 @@ const productos = [
         img: [lips2],
         description:'Esta es una descripcion un poco default para poder realizar el desafio',
         price: 150,
-        
+        categoria: "labio",
     },
 
     {
@@ -92,7 +93,7 @@ const productos = [
         img: [lips3],
         description:'Esta es una descripcion un poco default para poder realizar el desafio',
         price: 150,
-        
+        categoria: "labio",
     },
 
     {
@@ -101,7 +102,7 @@ const productos = [
         img: [lips4],
         description:'Esta es una descripcion un poco default para poder realizar el desafio',
         price: 150,
-        
+        categoria: "labio",
     },
 
     {
@@ -110,7 +111,7 @@ const productos = [
         img: [rimel1],
         description:'',
         price: 400,
-        
+        categoria:"rimel",
     },
 
     {
@@ -119,7 +120,7 @@ const productos = [
         img: [rimel2],
         description:'Esta es una descripcion un poco default para poder realizar el desafio',
         price: 400,
-        
+        categoria: "rimel",
     },
 
     {
@@ -128,7 +129,7 @@ const productos = [
         img: [unas1],
         description:'Esta es una descripcion un poco default para poder realizar el desafio',
         price: 150,
-        
+        categoria: "unas",
     },
 
     {
@@ -137,7 +138,7 @@ const productos = [
         img: [unas2],
         description:'Esta es una descripcion un poco default para poder realizar el desafio',
         price: 150,
-        
+        categoria: "unas",
     },
 
     {
@@ -146,7 +147,7 @@ const productos = [
         img: [unas3],
         description:'Esta es una descripcion un poco default para poder realizar el desafio',
         price: 150,
-        
+        categoria: "unas",
     },
 
     {
@@ -155,7 +156,7 @@ const productos = [
         img: [unas4],
         description:'Esta es una descripcion un poco default para poder realizar el desafio',
         price: 200,
-        
+        categoria: "unas",
     },
 
     {
@@ -164,7 +165,7 @@ const productos = [
         img: [unas5],
         description:'Esta es una descripcion un poco default para poder realizar el desafio',
         price: 250,
-        
+        categoria: "unas",
     },
 
     {
@@ -173,7 +174,7 @@ const productos = [
         img: [unas6],
         description:'Esta es una descripcion un poco default para poder realizar el desafio',
         price: 250,
-        
+        categoria: "unas",
     },
 
     {
@@ -182,7 +183,7 @@ const productos = [
         img: [unas7],
         description:'Esta es una descripcion un poco default para poder realizar el desafio',
         price: 150,
-        
+        categoria: "unas",
     },
 
     {
@@ -191,7 +192,7 @@ const productos = [
         img: [unas8],
         description:'Esta es una descripcion un poco default para poder realizar el desafio',
         price: 200,
-        
+        categoria: "unas",
     },
 
     {
@@ -200,12 +201,15 @@ const productos = [
         img: [unas9],
         description:'Esta es una descripcion un poco default para poder realizar el desafio',
         price: 400,
-        
+        categoria: "unas",
     },
 
 ]
 
+
+
 const getFetch = new Promise((resolve, reject) => {
+    
     setTimeout(() => {
         resolve(productos)
         reject(err => console.log(err))

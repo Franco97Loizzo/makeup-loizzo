@@ -2,15 +2,22 @@ import { useEffect, useState } from "react";
 import getFetch from "../../helper/helper";
 import Item from "../Item/Item";
 import "./ItemList.css"
+import {useParams} from "react-router-dom"
 
 const ItemList = ()=>{
     const [data, setData] = useState([])
+    const {tipoProducto} = useParams()
 
     useEffect(()=>{
-        getFetch.then(data => {
-            setData(data)
+        getFetch.then(data =>{
+            if(!tipoProducto){
+                setData(data)
+            } else{
+                const nuevaLista = data.filter(item=>item.categoria === tipoProducto)
+                setData(nuevaLista)
+            }
         })
-    }, [])
+    }, [tipoProducto])
 
     return(
         <>
