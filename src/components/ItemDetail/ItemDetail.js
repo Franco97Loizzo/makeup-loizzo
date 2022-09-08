@@ -21,6 +21,7 @@ const ItemDetail = ({})=>{
     const agregar = (productos)=>{
         alert('Agregaste ' + productos + ' productos al carrito')//luego lo cambio por un toastify
         setNumeroProductos(productos);
+        console.log(agregar)
     }
 
     return(

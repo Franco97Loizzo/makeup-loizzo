@@ -25,7 +25,7 @@ export const ItemCount = ({stock, initial, agregarProducto, texto})=>{
                     <strong className="countText">{texto}{contador}</strong>
                     <button className="botonCounter" onClick={increBoton}>+</button>
                 </div>
-                <button className="botonAgregar" onClick={()=>(agregarProducto(contador))}>Agregar al Carrito</button>
+                <button disabled={stock === 0} className="botonAgregar" onClick={()=>(agregarProducto(contador))}>Agregar al Carrito</button>
             </section>
 
         </>
