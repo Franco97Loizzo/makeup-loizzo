@@ -9,8 +9,8 @@ const Item = ({data})=>{
                 <img className="itemImg" src={data.img} alt="" width="200px" height="200px"/>
                 <h2 className="tituloItem">{data.name}</h2>
                 <strong className="precioitems">${data.price}</strong>
-                <Link to={`/item/${data.id}`}>
-                    <button className="botonDetalles">Ver Detalle</button>
+                <Link className="botonDetalles" to={`/item/${data.id}`}>
+                    Ver Detalle
                 </Link>
             </div>
             

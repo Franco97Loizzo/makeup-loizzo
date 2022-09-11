@@ -2,7 +2,7 @@ import { useState,useEffect } from "react";
 import getFetch from "../../helper/helper";
 import { ItemCount } from "../ItemCount/ItemCount";
 import "./ItemDetail.css"
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 
 const ItemDetail = ({})=>{
     const [data,setData] = useState({})
@@ -36,7 +36,12 @@ const ItemDetail = ({})=>{
                     <h3>Descripcion</h3>
                     <p className="descriptiondetalles">{data.description}</p>
                     <p className="preciodetalles">${data.price}</p>
+
                     <ItemCount texto={"Cantidad de productos: "} stock={6} initial={1} agregarProducto={agregar}/>
+                    
+                    <Link className="botonVolver" to={"/"}>
+                        Volver
+                    </Link>
                 </div>
             }
         </>

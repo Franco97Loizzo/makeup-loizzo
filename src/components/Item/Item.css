@@ -17,12 +17,23 @@
 }
 
 .botonDetalles{
-    margin: auto;
-    margin-bottom: 3px;
-    padding: 1%;
+    text-decoration: none;
+    font-family:Georgia, 'Times New Roman', Times, serif ;
+    font-size: 20px;
+    color: white;
     background: none;
-    background-color: #1D9969;
-    width: 20%;
+    background-color: #1d9969;
+    display: inline;
+    justify-content: center;
+    margin: auto;
+    margin-bottom: 1%;
+    padding: 1%;
+    border-radius: 5px;
+    border-color: #000000;
+}
+.botonDetalles:hover{
+    cursor: pointer;
+    background-color: #20E69A;
 }
 
 .precioitems{
