@@ -7,6 +7,7 @@ import { useParams, Link } from "react-router-dom";
 const ItemDetail = ({})=>{
     const [data,setData] = useState({})
     const [load, setLoad] = useState(true)
+    const [add, setAdd] = useState (false)
     const {idProducto} = useParams()
 
     useEffect(()=>{
@@ -14,6 +15,7 @@ const ItemDetail = ({})=>{
         .then(response =>{
             setData(response.find(data => data.id===parseInt(idProducto)))
             setLoad(false)
+            
         })
     }, [idProducto])
 
@@ -21,6 +23,7 @@ const ItemDetail = ({})=>{
     const agregar = (productos)=>{
         alert('Agregaste ' + productos + ' productos al carrito')//luego lo cambio por un toastify
         setNumeroProductos(productos);
+        setAdd(true)
         console.log(agregar)
     }
 
@@ -36,9 +39,13 @@ const ItemDetail = ({})=>{
                     <h3>Descripcion</h3>
                     <p className="descriptiondetalles">{data.description}</p>
                     <p className="preciodetalles">${data.price}</p>
-
-                    <ItemCount texto={"Cantidad de productos: "} stock={6} initial={1} agregarProducto={agregar}/>
+                    {
+                        add ? <Link className="botonVolver" to={"/cart"}>Ir al carrito</Link>
+                        :
+                        <ItemCount texto={"Cantidad de productos: "} stock={6} initial={1} agregarProducto={agregar}/>
+                    }
                     
+
                     <Link className="botonVolver" to={"/"}>
                         Volver
                     </Link>

@@ -1,0 +1,7 @@
+.cartContainer{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    background-color: #e6b84e86;
+}

@@ -7,13 +7,8 @@
 }
 
 
-.titulodetalles, .detalles, .preciodetalles, .descriptiondetalles
+.titulodetalles, .detalles, .preciodetalles, .descriptiondetalles, .detallesImg
 ,h3{
-    margin: auto;
-    padding: 1%;
-}
-
-.detallesImg{
     margin: auto;
     padding: 1%;
 }
