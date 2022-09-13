@@ -18,7 +18,7 @@ export const CartContainer = () => {
                     <div>
                         <p>{data.name}</p>
                         <p>${data.price}</p>
-                        <p>.{data.quantity}</p>
+                        <p>Cantidad: {data.quantity}</p>
                         <button onClick={()=>removeProduct(data.id)}>Eliminar Producto</button>
                     </div>
                     </>

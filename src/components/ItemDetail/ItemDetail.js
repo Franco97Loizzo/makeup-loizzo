@@ -22,11 +22,11 @@ const ItemDetail = ({})=>{
 
     /* const [numeroProductos, setNumeroProductos] = useState(0); */
     
-    const agregar = (productos)=>{
-        alert('Agregaste ' + productos + ' productos al carrito')//luego lo cambio por un toastify
+    const agregar = (contador)=>{
+        alert('Agregaste ' + contador + ' productos al carrito')//luego lo cambio por un toastify
         /* setNumeroProductos(productos); */
         setAdd(true)
-        const newProduct = {...data, quantity:productos}
+        const newProduct = {...data, quantity:contador}
         addProduct(newProduct)
     }
 

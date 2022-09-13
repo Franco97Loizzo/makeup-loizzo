@@ -4,23 +4,24 @@ export const CartContext = createContext();
 
 export const CartProvider = ({children})=>{
     const [productCartList, setProductCartList] = useState([])
-
-    const isInCart = (id)=>{
-        const elementExists = productCartList.some((elemento)=>elemento.id === id)
-        return elementExists;
+    
+    const isInCart = (id)=> {
+        const elmIdenx = productCartList.findIndex(product => product.id === id);
+        if(elmIdenx>=0){
+            return {exists: true, index:elmIdenx}
+        } else {
+            return {exists: false, index:undefined}
+        }
     }
 
-    const addProduct = (product, qty)=>{
-        const newList = [...productCartList]
-
-        if(isInCart(product.id)){
-            const productIndex = productCartList.findIndex(element => element.id === product.id)
-            newList[productIndex].quantity = newList[productIndex].quantity + qty;
-            setProductCartList(newList)
+    const addProduct = (product)=> {
+        const inCartObj = isInCart(product.id)
+        if (inCartObj.exists){
+            const productListCopy = [...productCartList]
+            productListCopy[inCartObj.index].quantity = productListCopy[inCartObj.index].quantity + product.quantity
+            setProductCartList(productListCopy)
         } else{
-            const newProduct = {...product, quantity:qty}
-            const newList = [...productCartList]
-            newList.push(newProduct)
+            const newList = [...productCartList, product]
             setProductCartList(newList)
         }
     }
