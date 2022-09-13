@@ -23,7 +23,7 @@ import unas8 from "../assets/unas8.jpeg"
 import unas9 from "../assets/unas9.jpeg"
 
 
-const productos = [
+export const productos = [
     {
         id: 1,
         name: 'Sombra para ojos tono Azul',

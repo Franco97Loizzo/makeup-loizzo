@@ -1,30 +1,33 @@
-import { useState,useEffect } from "react";
+import { useState,useEffect, useContext } from "react";
 import getFetch from "../../helper/helper";
 import { ItemCount } from "../ItemCount/ItemCount";
 import "./ItemDetail.css"
 import { useParams, Link } from "react-router-dom";
+import { CartContext } from "../../context/CartContext";
 
 const ItemDetail = ({})=>{
     const [data,setData] = useState({})
     const [load, setLoad] = useState(true)
     const [add, setAdd] = useState (false)
     const {idProducto} = useParams()
+    const {addProduct} = useContext(CartContext)
 
     useEffect(()=>{
         getFetch
         .then(response =>{
             setData(response.find(data => data.id===parseInt(idProducto)))
             setLoad(false)
-            
         })
     }, [idProducto])
 
-    const [numeroProductos, setNumeroProductos] = useState(0);
+    /* const [numeroProductos, setNumeroProductos] = useState(0); */
+    
     const agregar = (productos)=>{
         alert('Agregaste ' + productos + ' productos al carrito')//luego lo cambio por un toastify
-        setNumeroProductos(productos);
+        /* setNumeroProductos(productos); */
         setAdd(true)
-        console.log(agregar)
+        const newProduct = {...data, quantity:productos}
+        addProduct(newProduct)
     }
 
     return(
@@ -44,8 +47,6 @@ const ItemDetail = ({})=>{
                         :
                         <ItemCount texto={"Cantidad de productos: "} stock={6} initial={1} agregarProducto={agregar}/>
                     }
-                    
-
                     <Link className="botonVolver" to={"/"}>
                         Volver
                     </Link>
