@@ -1,5 +1,5 @@
 .navStyle{
-    background-color: rgba(29, 153, 105, 0.603);
+    background-color: #1d9969;
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
@@ -21,6 +21,10 @@
 
 .liNav{
     padding: 10px;
+    text-decoration: none;
+    font-family:Georgia, 'Times New Roman', Times, serif ;
+    font-size: 20px;
+    color: white;
 }
 
 .botonNav{

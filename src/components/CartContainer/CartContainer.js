@@ -2,30 +2,32 @@ import React from 'react'
 import "./CartContainer.css"
 import { useContext } from 'react'
 import { CartContext } from '../../context/CartContext'
+import { CartIndividual } from '../CartIndividual/CartIndividual'
 
 
 
 export const CartContainer = () => {
-    const {productCartList, removeProduct, clearCart} = useContext(CartContext)
-    console.log("lista", productCartList)
+    const {productCartList, clearCart, getFullPrice} = useContext(CartContext)
+
     return (
         <div className='cartContainer'>
-            
-            <h1>Hola soy un carrito</h1>
-            {
-                productCartList.map(data=>(
+            <div>
+                {
+                    productCartList.length>0 ?
                     <>
-                    <div>
-                        <p>{data.name}</p>
-                        <p>${data.price}</p>
-                        <p>Cantidad: {data.quantity}</p>
-                        <button onClick={()=>removeProduct(data.id)}>Eliminar Producto</button>
-                    </div>
+                        {
+                            productCartList.map(data=>(
+                                <CartIndividual key={data.id} data={data}/>
+                                ))
+                                
+                        }
+                        <p>Precio total de los productos: {getFullPrice()}</p>
+                        <button onClick={clearCart}>Borrar todo</button>
                     </>
-                ))
-            }
-            <button onClick={()=>clearCart()}>Borrar todo</button>
+                    :
+                    <h1>no hay productos</h1>
+                }
+            </div>
         </div>
-
     )
 }

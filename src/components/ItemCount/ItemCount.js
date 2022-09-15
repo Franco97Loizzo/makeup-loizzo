@@ -3,16 +3,16 @@ import "./ItemCount.css"
 
 
 
-export const ItemCount = ({stock, initial, agregarProducto, texto})=>{
-    const [contador, setContador] = useState(initial)
+export const ItemCount = ({stock, initial, onAdd, texto})=>{
+    const [count, setCount] = useState(initial)
     const increBoton = ()=>{
-        if(contador<stock){
-            setContador(contador + 1)
+        if(count<stock){
+            setCount(count + 1)
         }
     }
     const decreBoton = ()=>{
-        if(contador>0){
-            setContador(contador - 1)
+        if(count>0){
+            setCount(count - 1)
         }
     }
     
@@ -22,10 +22,10 @@ export const ItemCount = ({stock, initial, agregarProducto, texto})=>{
             <section className="countContainer">
                 <div className="counterContainer">
                     <button className="botonCounter" onClick={decreBoton}>-</button>
-                    <strong className="countText">{texto}{contador}</strong>
+                    <strong className="countText">{texto}{count}</strong>
                     <button className="botonCounter" onClick={increBoton}>+</button>
                 </div>
-                <button disabled={stock === 0} className="botonAgregar" onClick={()=>(agregarProducto(contador))}>Agregar al Carrito</button>
+                <button disabled={stock === 0} className="botonAgregar" onClick={()=>(onAdd(count))}>Agregar al Carrito</button>
             </section>
 
         </>

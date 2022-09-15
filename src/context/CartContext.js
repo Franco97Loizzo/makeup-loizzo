@@ -14,14 +14,17 @@ export const CartProvider = ({children})=>{
         }
     }
 
-    const addProduct = (product)=> {
+    const addProduct = (product, qty)=> {
         const inCartObj = isInCart(product.id)
         if (inCartObj.exists){
             const productListCopy = [...productCartList]
-            productListCopy[inCartObj.index].quantity = productListCopy[inCartObj.index].quantity + product.quantity
+            productListCopy[inCartObj.index].quantity = productListCopy[inCartObj.index].quantity + qty
+            productListCopy[inCartObj.index].totalPrice = productListCopy[inCartObj.index].quantity*productListCopy[inCartObj.index].price 
             setProductCartList(productListCopy)
         } else{
-            const newList = [...productCartList, product]
+            const newProduct = {...product, quantity:qty, totalPrice: qty*product.price}
+            const newList = [...productCartList]
+            newList.push(newProduct)
             setProductCartList(newList)
         }
     }
@@ -36,9 +39,18 @@ export const CartProvider = ({children})=>{
         setProductCartList([])
     }
 
+    const getTotalProducts = ()=>{
+        const totalProducts = productCartList.reduce((acc,item)=>acc + item.quantity, 0) 
+        return totalProducts
+    }
+
+    const getFullPrice = ()=>{
+        const fullPrice = productCartList.reduce((acu,item)=>acu + item.totalPrice, 0)
+        return fullPrice
+    }
 
     return (
-        <CartContext.Provider value={{productCartList, addProduct, removeProduct, clearCart, isInCart}}>
+        <CartContext.Provider value={{productCartList, addProduct, removeProduct, clearCart, isInCart, getTotalProducts, getFullPrice}}>
             {children}
         </CartContext.Provider>
     )

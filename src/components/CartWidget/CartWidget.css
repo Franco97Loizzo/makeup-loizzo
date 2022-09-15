@@ -1,0 +1,6 @@
+.carritoIcon:hover{
+    filter:grayscale(0.5);
+}
+.carritoIcon{
+    background-color: #1d9969;
+}
