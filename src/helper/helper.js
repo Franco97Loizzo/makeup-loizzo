@@ -217,3 +217,16 @@ const getFetch = new Promise((resolve, reject) => {
 })
 
 export default getFetch
+
+/*
+https://i.ibb.co/CnCcR2y/rimel1.jpg
+https://i.ibb.co/6WNpwS5/rimel2.jpg
+https://i.ibb.co/z526d86/unas1.jpg
+https://i.ibb.co/4jd0Sfn/unas2.jpg
+https://i.ibb.co/WymYRdV/unas3.jpg
+https://i.ibb.co/WtjGLnv/unas4.jpg
+https://i.ibb.co/tD2qDWX/unas5.jpg
+https://i.ibb.co/nBLS9SQ/unas6.jpg
+https://i.ibb.co/y6bn7fb/unas7.jpg
+https://i.ibb.co/0rTV2Qf/unas8.jpg
+https://i.ibb.co/7y7GyG4/unas9.jpg */

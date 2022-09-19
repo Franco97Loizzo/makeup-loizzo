@@ -1,23 +1,37 @@
 import { useEffect, useState } from "react";
-import getFetch from "../../helper/helper";
 import Item from "../Item/Item";
 import "./ItemList.css"
 import {useParams} from "react-router-dom"
+import {collection, getDocs, query, where} from "firebase/firestore"
+import {datab} from "../../utils/firebase"
+
 
 const ItemList = ()=>{
     const [data, setData] = useState([])
-    const {tipoProducto} = useParams()
+    const {categoria} = useParams()
 
     useEffect(()=>{
-        getFetch.then(data =>{
-            if(!tipoProducto){
-                setData(data)
-            } else{
-                const nuevaLista = data.filter(item=>item.categoria === tipoProducto)
-                setData(nuevaLista)
+        const getData = async()=>{
+            try {
+                let queryRef = !categoria
+                ? collection(datab, "items")
+                : query(collection(datab,"items"), where("categoria","==",categoria))
+                const response = await getDocs(queryRef)
+                const datas = response.docs.map(doc=>{
+                    const newDoc = {
+                        ...doc.data(),
+                        id:doc.id
+                    }
+                    return newDoc;
+                });
+                console.log("datos", datas)
+                setData(datas)
+            } catch (error) {
+                console.log(error)
             }
-        })
-    }, [tipoProducto])
+        }
+        getData()
+    },[categoria])
 
     return(
         <>

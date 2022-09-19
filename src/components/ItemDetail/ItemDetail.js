@@ -4,6 +4,7 @@ import "./ItemDetail.css"
 import { Link } from "react-router-dom";
 import { CartContext } from "../../context/CartContext";
 
+
 const ItemDetail = ({data})=>{
     const {addProduct} = useContext(CartContext)
     const [quantity, setQuantity] = useState(0)
