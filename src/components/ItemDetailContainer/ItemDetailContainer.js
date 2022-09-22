@@ -10,13 +10,7 @@ const ItemDetailContainer = ()=>{
     const [data,setData] = useState({})
     const {idProduct} = useParams()
     const [load, setLoad] = useState(true)
-/*     useEffect(()=>{
-        getFetch
-        .then(response =>{
-            setData(response.find(data => data.id===parseInt(idProducto)))
-            setLoad(false)
-        })
-    }, [idProducto]) */
+
     useEffect(()=>{
         const queryRef = doc(datab, "items", idProduct)
         getDoc(queryRef)

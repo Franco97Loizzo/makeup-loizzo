@@ -3,6 +3,8 @@ import { ItemCount } from "../ItemCount/ItemCount";
 import "./ItemDetail.css"
 import { Link } from "react-router-dom";
 import { CartContext } from "../../context/CartContext";
+import Toastify from 'toastify-js'
+import "toastify-js/src/toastify.css"
 
 
 const ItemDetail = ({data})=>{
@@ -10,7 +12,13 @@ const ItemDetail = ({data})=>{
     const [quantity, setQuantity] = useState(0)
 
     const onAdd = (count)=>{
-        alert('Agregaste ' + count + ' productos al carrito')//luego lo cambio por un toastify
+        Toastify({
+            text: ("Agregaste " + count + " productos al carrito"),
+            offset: {
+                x: 50,
+                y: 10
+            },
+        }).showToast();
         setQuantity(count)
         addProduct(data,count)
     }
