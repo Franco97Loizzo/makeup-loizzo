@@ -50,11 +50,11 @@ export const Form = () => {
         setUserForm({...userForm, [e.target.name]: e.target.value})
     }
     const inputArray = [
-        {title:"Nombre", inputName:"name"},
-        {title:"Apellido", inputName:"surname"},
-        {title:"Telefono", inputName:"phone"},
-        {title:"Email", inputName:"email"},
-        {title:"Repita su Email", inputName:"emailcheck"}
+        {title:"Nombre", inputName:"name", placeholder:"ej: Franco"},
+        {title:"Apellido", inputName:"surname", placeholder:"ej: Loizzo"},
+        {title:"Telefono", inputName:"phone", placeholder:"ej: +541234567899"},
+        {title:"Email", inputName:"email", placeholder:"ejemplo@mail.cm"},
+        {title:"Repita su Email", inputName:"emailcheck", placeholder:"ejemplo@mail.cm"}
     ]
     const indRegex = /\+\d{12}$/;
     return (
@@ -68,6 +68,7 @@ export const Form = () => {
                             <input className='inputs'
                             type="text" 
                             name={ele.inputName}
+                            placeholder={ele.placeholder}
                             onChange={(e)=> onInput(e)}
                             size={20}/>
                         </div>
