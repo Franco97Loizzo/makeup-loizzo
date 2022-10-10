@@ -1,0 +1,55 @@
+.bigContainer{
+    max-width: 1500px;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.container{
+    min-width: 800px;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+}
+
+.listContainer{
+    margin-left: 150px;
+}
+
+.hrline{
+    border: 1px solid rgb(0, 0, 0);
+    border-radius: 5px;
+}
+
+
+.cartE{
+    font-family:Georgia, 'Times New Roman', Times, serif ;
+    font-size: 20px;
+    margin: 10px;
+    display: flex;
+}
+
+.cartButton{
+    margin: auto;
+    text-decoration: none;
+    font-family:Georgia, 'Times New Roman', Times, serif ;
+    font-size: 20px;
+    color: white;
+    background: none;
+    background-color: #1d9969;
+    display: inline;
+    justify-content: center;
+    padding: 0.5%;
+    border-radius: 5px;
+    border-color: #000000;
+}
+
+.cartButton:hover{
+    cursor: pointer;
+    background-color: #20E69A;
+}
+

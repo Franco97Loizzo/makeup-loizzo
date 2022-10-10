@@ -5,7 +5,6 @@ import { useParams } from "react-router-dom";
 import {doc, getDoc} from "firebase/firestore"
 import {datab} from "../../utils/firebase"
 
-
 const ItemDetailContainer = ()=>{
     const [data,setData] = useState({})
     const {idProduct} = useParams()
@@ -31,9 +30,7 @@ const ItemDetailContainer = ()=>{
                 :
                 <ItemDetail data={data}/>
             }
-            
         </>
-        
     )
 }
 

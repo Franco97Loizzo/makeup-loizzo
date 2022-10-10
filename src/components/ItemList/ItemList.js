@@ -24,7 +24,6 @@ const ItemList = ()=>{
                     }
                     return newDoc;
                 });
-                console.log("datos", datas)
                 setData(datas)
             } catch (error) {
                 console.log(error)
@@ -34,17 +33,15 @@ const ItemList = ()=>{
     },[categoria])
 
     return(
-        <>
-            <div className="itemListStyle">
-                {
-                    data.map(
-                        data=>(
-                            <Item key={data.name} data={data}/>
-                        )
+        <div className="itemListStyle">
+            {
+                data.map(
+                    data=>(
+                        <Item key={data.name} data={data}/>
                     )
-                }
-            </div>
-        </>
+                )
+            }
+        </div>
     )
 }
 

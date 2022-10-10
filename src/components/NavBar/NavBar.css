@@ -7,10 +7,6 @@
     padding: 10px;
 }
 
-.logoLinda{
-
-}
-
 .ulNav{
     display: flex;
     flex-wrap: wrap;
@@ -24,11 +20,19 @@
     text-decoration: none;
     font-family:Georgia, 'Times New Roman', Times, serif ;
     font-size: 20px;
-    color: white;
+    background-color: #7a642bd7;
+    color: rgb(255, 255, 255);
+}
+.inactiveNav{
+    padding: 10px;
+    text-decoration: none;
+    font-family:Georgia, 'Times New Roman', Times, serif ;
+    font-size: 20px;
+    background-color: #c4ab73e0;
+    color: rgb(255, 255, 255);
 }
 
 .botonNav{
-    
     border-radius: 100px;
     cursor: pointer;
 }
@@ -37,6 +41,5 @@
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
-    list-style: none;
     margin: 0;
 }

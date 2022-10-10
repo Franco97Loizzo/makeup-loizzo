@@ -1,9 +1,10 @@
 .detailContainer{
-
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
     justify-content: flex-end;
+    box-shadow: 1px 1px 10px #997b35;
+    margin-top: 10px;
 }
 
 

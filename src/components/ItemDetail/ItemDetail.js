@@ -36,7 +36,6 @@ const ItemDetail = ({data})=>{
                         <ItemCount texto={"Cantidad de productos: "} stock={6} initial={1} onAdd={onAdd}/>
                         : <h3>No hay mas stock :c</h3>
                     }
-                    
                     {
                         quantity>0 && <Link className="botonVolver" to={"/cart"}>Ir al carrito</Link>
                     }

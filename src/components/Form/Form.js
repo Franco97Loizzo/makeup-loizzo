@@ -2,11 +2,20 @@ import { addDoc, collection } from 'firebase/firestore'
 import {React , useContext, useState} from 'react'
 import { CartContext } from '../../context/CartContext'
 import {datab} from "../../utils/firebase"
+import { Modal } from '../Modal/Modal'
+import "./Form.css"
 
 export const Form = () => {
-    const {productCartList, getFullPrice} = useContext(CartContext)
+    const {productCartList, getFullPrice, clearCart} = useContext(CartContext)
     const [idOrder, setIdOrder] = useState("")
     const [orderTicket, setOrderTicket] = useState(false)
+    const [userForm, setUserForm] = useState({
+        name:'',
+        surname:'',
+        phone:0,
+        email:'',
+        emailcheck:''
+    })
 
     const timestamp = Date.now()
     const dateString = timestamp
@@ -18,11 +27,6 @@ export const Form = () => {
     const sendOrder = (eve)=>{
         eve.preventDefault()
         const order = {
-            buyer: {
-                name: eve.target[0].value,
-                phone: eve.target[1].value,
-                email: eve.target[2].value
-            },
             items: productCartList,
             total: getFullPrice(),
             date: formatDate(dateString)
@@ -30,44 +34,69 @@ export const Form = () => {
         const queryRef = collection(datab, "orders")
         addDoc(queryRef, order)
             .then(res=>setIdOrder(res.id))
-        console.log(order, idOrder)
         setOrderTicket(!orderTicket)
-        
     }
 
     const openMsg = ()=>{
         setOrderTicket(!orderTicket)
+        clearCart()
     }
 
     const stopEvent= (e)=>{
         e.stopPropagation();
     }
 
+    const onInput = (e)=>{
+        setUserForm({...userForm, [e.target.name]: e.target.value})
+    }
+    const inputArray = [
+        {title:"Nombre", inputName:"name"},
+        {title:"Apellido", inputName:"surname"},
+        {title:"Telefono", inputName:"phone"},
+        {title:"Email", inputName:"email"},
+        {title:"Repita su Email", inputName:"emailcheck"}
+    ]
+    const indRegex = /\+\d{12}$/;
     return (
-        <>
-        <form onSubmit={sendOrder}>
-            <input type="text" placeholder='Nombre'/>
-            <input type="text" placeholder='Telefono'/>
-            <input type="text" placeholder='Email'/>
-            <button type='submit'>Enviar Formulario</button>
-        </form>
-        {
-            orderTicket &&
-            <div className='background-modal' onClick={openMsg}>
-                <div className='modal' onClick={stopEvent}>
-                    <div className='divTopContainer'>
-                        <strong className='textoModal'>Mensaje</strong>
-                        <button className='botonModalX' onClick={openMsg}>X</button>
-                    </div>
-                    <hr/>
-                        <p className='textoModal'>Felicidades!</p>
-                        <p className='textoModal'>Su compra se realizo con exito!</p>
-                        <p className='textoModal'>ID de transaccion: {idOrder}</p>
-                        <p className='textoModal'>A la fecha {formatDate(dateString)}</p>
-                        <button className='botonModal' onClick={openMsg}>cerrar</button>
-                </div>
-            </div>
-        }
-        </>
+        <div className='formContainer'>
+            <form onSubmit={sendOrder}>
+                <strong>Llene este Formulario para realizar la compra</strong>
+                {
+                    inputArray.map(ele=>(
+                        <div className='divForm'>
+                            <label className='labels'>{ele.title}</label>
+                            <input className='inputs'
+                            type="text" 
+                            name={ele.inputName}
+                            onChange={(e)=> onInput(e)}
+                            size={20}/>
+                        </div>
+                    ))
+                }
+                <button
+                disabled={
+                    !(
+                        userForm.name &&
+                        userForm.surname &&
+                        userForm.email &&
+                        userForm.email === userForm.emailcheck &&
+                        userForm.phone.match(indRegex) 
+                    )
+                }
+                className="botonSubmit"
+                type='submit'>Enviar Formulario</button>
+            </form>
+            {
+                orderTicket &&
+                <Modal 
+                text1={`Felicidades ${userForm.name}!`}
+                text2={"Su compra se realizo con exito!"}
+                text3={`A la fecha ${formatDate(dateString)}`}
+                text4={`ID de transaccion: ${idOrder}`}
+                stopEvent={stopEvent}
+                action={openMsg}
+                />
+            }
+        </div>
     )
 }

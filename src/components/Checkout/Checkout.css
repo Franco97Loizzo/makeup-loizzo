@@ -1,0 +1,9 @@
+.checkContainer{
+    max-width: 1500px;
+    min-height: 300px;
+    margin: auto;
+    margin-top: 20px;
+    padding: 1%;
+    background-color: #e6b84e86;
+    box-shadow: 1px 1px 10px #997b35;
+}

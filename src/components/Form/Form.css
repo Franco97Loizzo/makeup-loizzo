@@ -1,0 +1,49 @@
+.formContainer{
+    display: flex;
+    justify-content: center;
+    margin: auto;
+}
+
+.divForm{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.inputs{
+    border-radius: 5px ;
+    margin: 0.5%;
+    font-family:Georgia, 'Times New Roman', Times, serif ;
+    font-size: 20px;
+}
+
+.labels{
+    font-family:Georgia, 'Times New Roman', Times, serif ;
+    font-size: 20px;
+    margin: 1%;
+}
+
+.botonSubmit{
+    margin: auto;
+    text-decoration: none;
+    font-family:Georgia, 'Times New Roman', Times, serif ;
+    font-size: 20px;
+    color: white;
+    background: none;
+    background-color: #1d9969;
+    display: inline;
+    justify-content: center;
+    padding: 0.5%;
+    border-radius: 5px;
+    border-color: #000000;
+}
+
+.botonSubmit:hover{
+    cursor: pointer;
+    background-color: #20E69A;
+}
+
+.botonSubmit:disabled{
+    cursor:default ;
+    background-color: #454d4a;
+}
